@@ -1,1 +1,6 @@
-
+data/*
+!data/.gitkeep
+*.o
+*.out
+treino
+leitor
