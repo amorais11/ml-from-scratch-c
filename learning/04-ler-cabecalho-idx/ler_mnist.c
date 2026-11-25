@@ -12,15 +12,15 @@ unsigned int le_int_big_endian(const unsigned char b[4]) {
 }
 
 int main() {
-    FILE *f = fopen("train-labels.idx1-ubyte", "rb");
+    FILE *f = fopen("/home/amorais/Área de trabalho/ML_FINAL/ml-from-scratch-c/data/train-labels.idx1-ubyte", "rb");
     if (f == NULL) {
-        perror("train-labels.idx1-ubyte");
+        perror("/home/amorais/Área de trabalho/ML_FINAL/ml-from-scratch-c/data/train-labels.idx1-ubyte");
         return 1;
     }
 
-    FILE *x = fopen("train-images.idx3-ubyte", "rb");
+    FILE *x = fopen("/home/amorais/Área de trabalho/ML_FINAL/ml-from-scratch-c/data/train-images.idx3-ubyte", "rb");
     if (x == NULL) {
-        perror("train-images.idx3-ubyte");
+        perror("/home/amorais/Área de trabalho/ML_FINAL/ml-from-scratch-c/data/train-images.idx3-ubyte");
         fclose(f);
         return 1;
     }
@@ -63,7 +63,7 @@ int main() {
         return 1;
     }
 
-    for (int i = 0; i < 28; i++) {
+    /*for (int i = 0; i < 28; i++) {
         for (int j = 0; j < 28; j++) {
             if (img[i * 28 + j] > 170) {
                 putchar(' ');
@@ -74,7 +74,7 @@ int main() {
             }
         }
         putchar('\n');
-    }
+    }*/
 
     fclose(f);
     fclose(x);

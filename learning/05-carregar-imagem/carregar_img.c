@@ -59,7 +59,7 @@ unsigned char *carregar_imagens(const char *caminho, int *n_imagens){
 int main() {
 
     int n;
-    unsigned char *imagens = carregar_imagens("/home/amorais/Área de trabalho/ML_FINAL/ml-from-scratch-c/data/train-images.idx3-ubyte", &n);
+    unsigned char *imagens = carregar_imagens("data/train-images.idx3-ubyte", &n);
 
     if (imagens == NULL) {
         printf("erro ao carregar imagens\n");
@@ -70,9 +70,9 @@ int main() {
 
     for (int i = 0; i < 28; i++) {
         for (int j = 0; j < 28; j++) {
-            if (imagens[55 * 784 + i * 28 + j] > 170) {
+            if (imagens[32 * 784 + i * 28 + j] > 170) {
                 putchar(' ');
-            } else if (imagens[55 * 784 + i * 28 + j] > 85) {
+            } else if (imagens[32 * 784 + i * 28 + j] > 85) {
                 putchar('.');
             } else {
                 putchar('#');
